@@ -1,0 +1,17 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress",
+    "build": "webpack",
+    "test": "node dist/index.js"
+  },
+  "repository": "https://github.com/wrule/webpack-test",
+  "author": "鸡毛 <shihao.gu@perfma.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "url-loader": "^3.0.0"
+  }
+}

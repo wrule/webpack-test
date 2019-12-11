@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress",
-    "build": "webpack",
+    "dev": "webpack-dev-server --colors --progress",
+    "build": "webpack --colors --progress",
     "test": "node dist/index.js"
   },
   "repository": "https://github.com/wrule/webpack-test",
@@ -22,6 +22,8 @@
     "vue-loader": "^15.7.2",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpackbar": "^4.0.0"
   }
 }

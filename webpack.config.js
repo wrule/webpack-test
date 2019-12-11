@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const WebpackBar = require('webpackbar');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -25,6 +27,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.ts', '.js', '.tsx', '.jsx', '.vue', '.json'],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Webpack测试页面',
@@ -33,6 +38,10 @@ module.exports = {
       inject: true,
     }),
     new VueLoaderPlugin(),
+    new WebpackBar({
+      color: '#2baaff',
+    }),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     open: true,

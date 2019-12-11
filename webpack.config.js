@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode: 'development',
@@ -13,8 +15,25 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: 'url-loader',
       },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack测试页面',
+      filename: 'index.html',
+      template: 'src/index.html',
+      inject: true,
+    }),
+    new VueLoaderPlugin(),
+  ],
   devServer: {
     open: true,
     hot: true,
